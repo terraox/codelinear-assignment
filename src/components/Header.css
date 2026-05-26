@@ -1,6 +1,6 @@
 .header-wrapper {
   position: sticky;
-  top: 24px;
+  top: 14px; /* Sits closer to the top edge */
   left: 0;
   width: 100%;
   display: flex;
@@ -15,8 +15,8 @@
   justify-content: space-between;
   width: 100%;
   max-width: 900px;
-  height: 56px;
-  padding: 0 24px;
+  height: 48px; /* Tighter vertical height */
+  padding: 0 20px; /* Tighter padding */
   background: var(--bg-glass);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);

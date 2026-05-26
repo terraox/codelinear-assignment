@@ -6,6 +6,7 @@
   padding: 100px 3% 60px 3%; /* Reduced side padding for maximum horizontal space */
   position: relative;
   overflow: hidden;
+  background-color: var(--bg-color);
 }
 
 .hero-container {
@@ -35,10 +36,10 @@
 }
 
 .hero-title {
-  font-size: 67px; /* Size from Figma: 67px */
-  font-weight: 500; /* Weight from Figma: Medium (500) */
-  line-height: 1.2; /* Line height from Figma: 120% */
-  letter-spacing: -0.02em; /* Letter spacing from Figma: -1% (adjusted for web rendering) */
+  font-size: clamp(3.2rem, 5.2vw, 5.5rem); /* Noticeably larger headline using clamp */
+  font-weight: 600; /* Bolder for prominence */
+  line-height: 1.15;
+  letter-spacing: -0.03em;
   color: var(--text-primary);
 }
 
@@ -57,11 +58,11 @@
 .btn-request-demo-hero {
   background: linear-gradient(90deg, var(--primary-blue-start) 0%, var(--primary-blue-end) 100%);
   color: var(--text-primary);
-  padding: 16px 36px;
+  padding: 15px 44px; /* Wider padding for prominence */
   border-radius: 12px;
-  font-size: 14px;
+  font-size: 15px; /* Slightly larger font-size */
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   box-shadow: 0 6px 20px rgba(0, 136, 255, 0.3);
   text-transform: uppercase;
 }
@@ -74,11 +75,11 @@
 .btn-contact-us-hero {
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: var(--text-primary);
-  padding: 16px 36px;
+  padding: 15px 44px; /* Wider padding for prominence */
   border-radius: 12px;
-  font-size: 14px;
+  font-size: 15px; /* Slightly larger font-size */
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   background: transparent;
   text-transform: uppercase;
 }
@@ -126,28 +127,33 @@
 
 .glow-background {
   position: absolute;
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle, rgba(0, 136, 255, 0.4) 0%, rgba(0, 13, 18, 0) 70%);
-  filter: blur(40px);
+  width: 550px; /* Expanded slightly wider than the image collage */
+  height: 550px;
+  /* Utilizes a brighter blue core (#0056b3) that transitions into the deep blue (#012957) so the glow is actually visible and rich on a black background */
+  background: radial-gradient(circle, #0056b3 0%, #012957 55%, rgba(1, 41, 87, 0) 100%);
+  filter: blur(55px); /* Soft glow, kept relatively focused to prevent spreading */
+  opacity: 1; /* Fully visible opacity */
   z-index: 1;
   pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centered exactly behind the photo */
 }
 
 .collage-wrapper {
   position: relative;
-  width: 362.64px; /* Width from Figma: 362.64px */
-  height: 300.71px; /* Height from Figma: 300.71px */
+  width: 455px; /* Increased image height/width by ~25-30% */
+  height: 376px;
   z-index: 2;
 }
 
 .base-image {
-  width: 362.64px;
-  height: 300.71px;
-  border-radius: 31px; /* Corner radius from Figma: 31 */
+  width: 455px; /* Increased base image dimension */
+  height: 376px;
+  border-radius: 36px; /* Slightly larger border radius for scaled image */
   object-fit: cover;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   position: relative;
   z-index: 5;
 }
@@ -164,15 +170,15 @@
 }
 
 .overlay-left {
-  width: 310px;
-  left: -160px;
-  bottom: -15px;
+  width: 385px; /* Scaled up left card by ~25% */
+  left: -200px; /* Overlaps photo more dramatically */
+  bottom: -20px;
 }
 
 .overlay-right {
-  width: 245px;
-  right: -125px;
-  top: 40px;
+  width: 305px; /* Scaled up right card by ~25% */
+  right: -155px; /* Overlaps photo more dramatically */
+  top: 50px;
 }
 
 /* Responsiveness */
