@@ -1,0 +1,279 @@
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 80px);
+  padding: 100px 3% 60px 3%; /* Reduced side padding for maximum horizontal space */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center; /* Centered columns vertically relative to each other */
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1600px; /* Expanded further to stretch to extremes of 1600px viewport */
+  gap: 160px; /* Increased horizontal space between text and visual collage */
+  position: relative;
+  z-index: 2;
+}
+
+/* Left Column */
+.hero-content {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.hero-text-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Gap from Figma: 16px */
+  max-width: 808px;
+}
+
+.hero-title {
+  font-size: 67px; /* Size from Figma: 67px */
+  font-weight: 500; /* Weight from Figma: Medium (500) */
+  line-height: 1.2; /* Line height from Figma: 120% */
+  letter-spacing: -0.02em; /* Letter spacing from Figma: -1% (adjusted for web rendering) */
+  color: var(--text-primary);
+}
+
+.hero-description {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--text-secondary); /* Figma text color: #5B6F84 */
+  font-weight: 400;
+}
+
+.hero-actions-row {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-request-demo-hero {
+  background: linear-gradient(90deg, var(--primary-blue-start) 0%, var(--primary-blue-end) 100%);
+  color: var(--text-primary);
+  padding: 16px 36px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 20px rgba(0, 136, 255, 0.3);
+  text-transform: uppercase;
+}
+
+.btn-request-demo-hero:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 136, 255, 0.45);
+}
+
+.btn-contact-us-hero {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--text-primary);
+  padding: 16px 36px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: transparent;
+  text-transform: uppercase;
+}
+
+.btn-contact-us-hero:hover {
+  border-color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.hero-trusted-by {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 84px; /* Combined with 36px parent flex gap, creates exactly 120px vertical distance from the buttons */
+}
+
+.trusted-title {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.trusted-logos-container {
+  display: flex;
+  align-items: center;
+}
+
+.trusted-logos-img {
+  width: 100%;
+  max-width: 621px; /* Width from Figma: 621.38px */
+  height: auto;
+  opacity: 0.85;
+}
+
+/* Right Column (Visual Collage) */
+.hero-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 480px;
+}
+
+.glow-background {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(0, 136, 255, 0.4) 0%, rgba(0, 13, 18, 0) 70%);
+  filter: blur(40px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.collage-wrapper {
+  position: relative;
+  width: 362.64px; /* Width from Figma: 362.64px */
+  height: 300.71px; /* Height from Figma: 300.71px */
+  z-index: 2;
+}
+
+.base-image {
+  width: 362.64px;
+  height: 300.71px;
+  border-radius: 31px; /* Corner radius from Figma: 31 */
+  object-fit: cover;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 5;
+}
+
+.overlay-card {
+  position: absolute;
+  height: auto;
+  z-index: 10;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.overlay-card:hover {
+  transform: scale(1.03) translateY(-3px);
+}
+
+.overlay-left {
+  width: 310px;
+  left: -160px;
+  bottom: -15px;
+}
+
+.overlay-right {
+  width: 245px;
+  right: -125px;
+  top: 40px;
+}
+
+/* Responsiveness */
+@media (max-width: 1100px) {
+  .hero-container {
+    gap: 40px;
+    padding: 0 20px;
+  }
+  
+  .hero-title {
+    font-size: 56px;
+  }
+  
+  .overlay-left {
+    left: -120px;
+    width: 260px;
+    bottom: -10px;
+  }
+  
+  .overlay-right {
+    right: -95px;
+    width: 200px;
+    top: 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+  }
+  
+  .hero-content {
+    align-items: center;
+  }
+  
+  .hero-text-frame {
+    align-items: center;
+  }
+  
+  .hero-actions-row {
+    justify-content: center;
+  }
+  
+  .hero-trusted-by {
+    align-items: center;
+  }
+  
+  .hero-visual {
+    margin-top: 20px;
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 42px;
+  }
+  
+  .hero-description {
+    font-size: 15px;
+  }
+  
+  .hero-actions-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  
+  .btn-request-demo-hero,
+  .btn-contact-us-hero {
+    width: 100%;
+    padding: 14px;
+  }
+  
+  .collage-wrapper {
+    width: 280px;
+    height: 232px;
+  }
+  
+  .base-image {
+    width: 280px;
+    height: 232px;
+    border-radius: 20px;
+  }
+  
+  .overlay-left {
+    width: 180px;
+    left: -50px;
+    bottom: 5px;
+  }
+  
+  .overlay-right {
+    width: 150px;
+    right: -45px;
+    top: -30px;
+  }
+  
+  .glow-background {
+    width: 320px;
+    height: 320px;
+  }
+}
