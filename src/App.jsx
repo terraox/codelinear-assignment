@@ -5,6 +5,7 @@ import Solutions from './components/Solutions';
 import CloudBanking from './components/CloudBanking';
 import EfficientBanking from './components/EfficientBanking';
 import DigitalBanking from './components/DigitalBanking';
+import Insights from './components/Insights';
 import CtaSection from './components/CtaSection';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <EfficientBanking />
         <DigitalBanking />
         <CtaSection />
+        <Insights />
       </main>
     </div>
   );

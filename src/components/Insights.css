@@ -1,0 +1,315 @@
+.insights-section {
+  position: relative;
+  background-color: #000D12; /* Rich dark navy background matching Solutions and CloudBanking */
+  padding: 120px 3% 140px 3%;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* ── Background Radial Glow ── */
+.insights-bg-glow {
+  position: absolute;
+  left: -100px;
+  top: 15%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(0, 136, 255, 0.06) 0%, rgba(0, 136, 255, 0) 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.insights-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+/* ── Left Column: Heading Block ── */
+.insights-left {
+  flex: 0 0 35%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.insights-title {
+  font-size: clamp(2.2rem, 3.2vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.btn-insights-tag {
+  padding: 14px 36px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  background: transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-insights-tag:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── Right Column: Article Layout ── */
+.insights-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Card Base ── */
+.article-card {
+  background-color: #021922; /* Matches the CTA dark card color exactly */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 136, 255, 0.15);
+  box-shadow: 0 12px 30px rgba(0, 13, 18, 0.4);
+}
+
+/* ── Top Featured Card (Horizontal layout) ── */
+.featured-card {
+  display: flex;
+  width: 100%;
+}
+
+.featured-card-visual {
+  width: 38%;
+  background-color: #001320; /* Darker navy box for the tile pattern */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 40px;
+}
+
+.featured-card-img {
+  width: 100%;
+  max-width: 258px;
+  height: auto;
+  display: block;
+}
+
+.featured-card-content {
+  flex: 1;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ── Article Content Details ── */
+.article-category {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0088FF; /* Clean blue tag */
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.featured-card-content .article-title {
+  font-size: clamp(20px, 1.6vw, 24px);
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.article-metadata {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+
+.article-author {
+  position: relative;
+}
+
+/* Dot separator */
+.article-author::after {
+  content: "•";
+  position: absolute;
+  right: -11px;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* ── Action Buttons ── */
+.btn-read-more {
+  padding: 12px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  background: transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-read-more:hover {
+  border-color: #0088FF;
+  color: #0088FF;
+  background-color: rgba(0, 136, 255, 0.04);
+}
+
+/* ── Bottom Grid (Two columns) ── */
+.insights-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.standard-card {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.standard-card .article-title {
+  font-size: clamp(18px, 1.4vw, 22px);
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  flex: 1; /* Pushes metadata & button down to align bottom */
+}
+
+/* ── Bottom Link Row ── */
+.insights-link-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.btn-read-all-insights {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0088FF;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.btn-read-all-insights:hover {
+  opacity: 0.8;
+}
+
+.btn-read-all-insights .arrow {
+  transition: transform 0.2s ease;
+}
+
+.btn-read-all-insights:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ── Responsive Styling ── */
+@media (max-width: 1200px) {
+  .insights-container {
+    gap: 40px;
+  }
+  
+  .insights-bottom-grid {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 991px) {
+  .insights-container {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .insights-left {
+    flex: 1;
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .insights-right {
+    width: 100%;
+  }
+
+  .featured-card {
+    flex-direction: column;
+  }
+
+  .featured-card-visual {
+    width: 100%;
+    padding: 60px;
+  }
+
+  .featured-card-content {
+    width: 100%;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .insights-bottom-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .standard-card {
+    padding: 36px;
+  }
+
+  .insights-link-row {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .insights-section {
+    padding: 80px 3% 100px 3%;
+  }
+
+  .featured-card-visual {
+    padding: 40px;
+  }
+
+  .featured-card-content {
+    padding: 30px;
+  }
+
+  .standard-card {
+    padding: 30px;
+  }
+}
