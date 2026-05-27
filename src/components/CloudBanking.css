@@ -26,6 +26,10 @@
   transform: translateY(-50%);
   user-select: none;
   white-space: nowrap;
+  
+  /* Mask gradient to fade the bottom half of the letters */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 90%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 90%);
 }
 
 .bg-watermark-text span {
