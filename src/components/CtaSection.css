@@ -1,0 +1,202 @@
+.cta-section {
+  display: flex;
+  justify-content: flex-end; /* Align the container to the right edge */
+  padding: 0 0 100px 0; /* No right padding so card can touch the edge; left padding handled via container margin */
+  background-color: #000D12;
+  width: 100%;
+}
+
+.cta-outer-container {
+  width: 100%;
+  /* margin-left aligns the left edge of the card with the rest of the centered 1600px page content */
+  margin-left: max(3%, calc(50% - 800px));
+}
+
+/* The rounded card */
+.cta-card {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #021922;
+  border-radius: 24px 0 0 24px;
+  padding: 64px 185px 64px 120px;
+  overflow: hidden;
+  gap: 60px;
+}
+
+/* ── CB7 Watermark ── */
+.cta-watermark {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 14%;
+  width: 86%;
+  max-width: 1160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: clamp(280px, 26vw, 360px);
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(0, 136, 255, 0.12);
+  font-family: var(--font-sans);
+  pointer-events: none;
+  line-height: 0.8;
+  user-select: none;
+  white-space: nowrap;
+  padding: 0 0;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 90%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 90%);
+}
+
+.cta-watermark span {
+  display: inline-block;
+  flex: 1;
+  text-align: center;
+  transform: scaleX(1.45); /* Slightly wider scaleX (1.45) */
+  transform-origin: center;
+}
+
+.cta-watermark span:first-child {
+  text-align: left;
+  transform-origin: left;
+}
+
+.cta-watermark span:last-child {
+  text-align: right;
+  transform-origin: right;
+}
+
+/* ── Left: Text Content ── */
+.cta-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cta-title {
+  font-size: clamp(1.8rem, 2.8vw, 3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.cta-description {
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 400;
+}
+
+/* ── Right: Buttons ── */
+.cta-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.btn-contact-us {
+  padding: 14px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  background: transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-contact-us:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-request-demo-cta {
+  padding: 14px 32px;
+  background: linear-gradient(90deg, var(--primary-blue-start) 0%, var(--primary-blue-end) 100%);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  box-shadow: 0 6px 20px rgba(0, 136, 255, 0.3);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-request-demo-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 136, 255, 0.5);
+}
+
+/* ── Responsiveness ── */
+@media (max-width: 991px) {
+  .cta-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 56px 40px;
+    gap: 40px;
+  }
+
+
+
+  .cta-content {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .cta-watermark {
+    left: 40px;
+    right: 40px;
+    width: auto;
+    max-width: none;
+    justify-content: center;
+    gap: 0;
+    font-size: clamp(160px, 20vw, 240px); /* Slightly smaller to fit mobile/tablet card height */
+    line-height: 1;
+    top: 0;
+    bottom: 0;
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .cta-card {
+    padding: 48px 28px;
+    border-radius: 16px 0 0 16px; /* Keep right side flat on mobile */
+  }
+
+  .cta-watermark {
+    left: 28px;
+    right: 28px;
+    width: auto;
+    max-width: none;
+    font-size: clamp(110px, 24vw, 160px); /* Fits inside mobile card height */
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-contact-us,
+  .btn-request-demo-cta {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
