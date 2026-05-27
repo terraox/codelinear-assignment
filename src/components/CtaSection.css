@@ -18,19 +18,33 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* Restored space-between for maximum distance */
   background-color: #021922;
   border-radius: 24px; /* Fully rounded on all sides */
-  padding: 64px 120px;
+  padding: 110px 140px 110px 120px; /* Taller padding, with slightly inset right side */
   overflow: hidden;
   gap: 60px;
+}
+
+/* ── Background Watermark Image ── */
+.cta-watermark-img {
+  position: absolute;
+  right: -50px;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 900px;
+  height: 320px; /* Stretches horizontally without growing vertically */
+  object-fit: fill;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 1;
 }
 
 /* ── Left: Text Content ── */
 .cta-content {
   position: relative;
   z-index: 2;
-  flex: 1;
+  flex: 1; /* Allow content to grow and push actions to the side */
   max-width: 520px;
   display: flex;
   flex-direction: column;
@@ -105,7 +119,7 @@
   .cta-card {
     flex-direction: column;
     text-align: center;
-    padding: 56px 40px;
+    padding: 80px 40px;
     gap: 40px;
   }
 
@@ -113,11 +127,21 @@
     max-width: 100%;
     align-items: center;
   }
+
+  .cta-watermark-img {
+    left: 50%;
+    right: auto;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    opacity: 0.6;
+  }
 }
 
 @media (max-width: 600px) {
   .cta-card {
-    padding: 48px 28px;
+    padding: 70px 28px;
     border-radius: 16px; /* Centered block is fully rounded on mobile too */
   }
 

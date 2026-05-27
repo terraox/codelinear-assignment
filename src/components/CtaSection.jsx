@@ -7,13 +7,21 @@ const CtaSection = () => {
         <div className="cta-card">
 
 
+          {/* Background Watermark Image "N7" */}
+          <img 
+            src="/N7.png" 
+            alt="" 
+            className="cta-watermark-img" 
+            aria-hidden="true" 
+          />
+
           {/* Left: Text Content */}
           <div className="cta-content">
             <h2 className="cta-title">
               Take the full advantage of<br />going paper-less now.
             </h2>
             <p className="cta-description">
-              CB7 helps your financial institution improve the client experience,<br />
+              N7 helps your financial institution improve the client experience,
               automate and optimize procedures, simplify banking operations
             </p>
           </div>
