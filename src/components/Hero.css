@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-height: calc(100vh - 80px);
-  padding: 100px 3% 60px 3%; /* Reduced side padding for maximum horizontal space */
+  min-height: auto;
+  padding: 80px 3% 60px 3%; /* Restored bottom padding to 60px for elegant breathing room */
   position: relative;
   overflow: hidden;
   background-color: var(--bg-color);
@@ -157,7 +157,7 @@
   position: relative;
   z-index: 5;
 }
-
+  
 .overlay-card {
   position: absolute;
   height: auto;

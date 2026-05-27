@@ -1,0 +1,220 @@
+.cloud-banking-section {
+  display: flex;
+  justify-content: center;
+  padding: 80px 3% 100px 3%; /* Elegant breathing room and padding flow */
+  background-color: #000D12; /* Matches the Solutions section background color */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Giant background outline watermark "CB7" */
+.bg-watermark-text {
+  position: absolute;
+  width: calc(100% - 631px + 160px); /* Spans exactly from the far left of viewport to the left side of the dashboard image */
+  display: flex;
+  justify-content: space-between; /* Spreads C, B, and 7 across the calculated width */
+  font-size: clamp(350px, 32vw, 440px); /* Increased height to stretch vertically beyond the text column */
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(0, 136, 255, 0.12); /* Clean cyan outline stroke */
+  font-family: var(--font-sans);
+  pointer-events: none;
+  z-index: -1; /* Placed behind content columns */
+  line-height: 0.8; /* Keeps vertical layout boundary tight */
+  left: -160px; /* Offset to the far left of viewport, allowing "C" to bleed off-screen like Figma */
+  top: 50%;
+  transform: translateY(-50%);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.bg-watermark-text span {
+  display: inline-block;
+  transform: scaleX(1.4); /* Stretches the letters horizontally to make them wider */
+  transform-origin: center;
+}
+
+.bg-watermark-text span:first-child {
+  transform-origin: left; /* Keep left edge of "C" at the far left boundary */
+}
+
+.bg-watermark-text span:last-child {
+  transform-origin: right; /* Prevents "7" from overlapping the dashboard image visually */
+}
+
+
+.cloud-banking-container {
+  display: flex;
+  width: 100%;
+  max-width: 1600px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  gap: 80px;
+}
+
+/* Left Column: Content Frame */
+.cloud-banking-content {
+  max-width: 607px; /* Matches Figma's 607.83px text frame */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px; /* Figma gap between text frame and buttons */
+}
+
+.cloud-banking-text-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Auto layout gap of 16px from Figma specs */
+}
+
+.cloud-banking-title {
+  font-size: clamp(2.2rem, 3.2vw, 3.5rem); /* Clamped header scaling */
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.cloud-banking-description {
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+}
+
+/* Actions Row */
+.cloud-banking-actions {
+  display: flex;
+  align-items: center;
+  gap: 32px; /* Auto layout gap between actions */
+}
+
+.btn-request-demo-cloud {
+  background: linear-gradient(90deg, var(--primary-blue-start) 0%, var(--primary-blue-end) 100%);
+  color: var(--text-primary);
+  padding: 15px 51px; /* Figma auto layout button padding */
+  border-radius: 10px; /* Figma Corner radius 10 */
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  box-shadow: 0 6px 20px rgba(0, 136, 255, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-request-demo-cloud:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 136, 255, 0.45);
+}
+
+.btn-learn-more-cloud {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0088FF;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.btn-learn-more-cloud:hover {
+  opacity: 0.8;
+}
+
+.learn-more-arrow {
+  transition: transform 0.2s ease;
+}
+
+.btn-learn-more-cloud:hover .learn-more-arrow {
+  transform: translateX(4px);
+}
+
+/* Right Column: Visual Laptop Wrapper */
+.cloud-banking-visual {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 680px;
+}
+
+.laptop-wrapper {
+  width: 100%;
+  max-width: 631px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.laptop-screen {
+  width: 100%;
+  aspect-ratio: 631 / 483; /* Lock aspect ratio based on Figma dims: 631.15 x 483.14 */
+  overflow: hidden;
+}
+
+.dashboard-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+  .cloud-banking-container {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .cloud-banking-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+  }
+
+  .cloud-banking-content {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .cloud-banking-actions {
+    justify-content: center;
+  }
+
+  .cloud-banking-visual {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .bg-watermark-text {
+    width: 100%;
+    max-width: 500px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .cloud-banking-actions {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .btn-request-demo-cloud {
+    width: 100%;
+    max-width: 280px;
+    padding: 15px 0;
+    text-align: center;
+  }
+}

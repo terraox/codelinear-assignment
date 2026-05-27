@@ -1,0 +1,192 @@
+.solutions-section {
+  display: flex;
+  justify-content: center;
+  padding: 80px 3% 80px 3%; /* Balanced top and bottom padding for spacious transition */
+  background-color: #000D12; /* Explicitly set to Figma color #000D12, making it distinct from the black Hero section */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background glow in the corner of the solutions section */
+.glow-solutions {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  /* Centered exactly around the Loan Origination / N7 right-hand grid column, matching Figma layout glow */
+  background: radial-gradient(circle, rgba(1, 41, 87, 0.75) 0%, rgba(0, 13, 18, 0) 70%);
+  filter: blur(75px);
+  pointer-events: none;
+  top: 30%;
+  right: 5%;
+  z-index: 1;
+}
+
+.solutions-container {
+  display: flex;
+  width: 100%;
+  max-width: 1600px; /* Aligns with Hero width */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 120px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Left Column: Title & Button */
+.solutions-sidebar {
+  width: 520px; /* Expanded further to accommodate a larger font size without wrapping */
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px; /* Auto layout gap from Figma: 48px */
+}
+
+.solutions-title {
+  font-size: clamp(2.2rem, 2.8vw, 2.75rem); /* Increased font size for better prominence, while maintaining exactly 2 lines */
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.btn-request-demo-solutions {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--text-primary);
+  padding: 12px 30px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  background: transparent;
+  text-transform: uppercase;
+}
+
+.btn-request-demo-solutions:hover {
+  background: var(--text-primary);
+  color: var(--bg-color);
+  border-color: var(--text-primary);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Right Column: Solutions Grid */
+.solutions-grid {
+  width: 614px; /* Slightly increased to fit 268px * 2 + 78px gap precisely */
+  display: grid;
+  grid-template-columns: repeat(2, 268px); /* Forces exact 2-column layout as specified in Figma */
+  gap: 52px 78px; /* Row gap 52px, Column gap 78px from Figma */
+}
+
+.solution-card {
+  width: 268px; /* Width from Figma: 268.51px */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* Figma has gap 28px inside Wrapper but we keep it tight and clean */
+}
+
+.solution-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.solution-icon-wrapper {
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.solution-icon-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.solution-badge {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border: 1px solid rgba(91, 111, 132, 0.25);
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.solution-card-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.solution-card-description {
+  font-size: 16px; /* Size from Figma: 16px */
+  line-height: 1.3; /* Line height from Figma: 130% */
+  color: rgba(255, 255, 255, 0.7); /* Opacity from Figma: white 70% */
+  font-weight: 400;
+}
+
+.solution-learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0088FF;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.learn-more-arrow {
+  transition: transform 0.2s ease;
+}
+
+.solution-learn-more:hover .learn-more-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+  .solutions-container {
+    gap: 60px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 991px) {
+  .solutions-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+  
+  .solutions-sidebar {
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    top: 0;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .solutions-grid {
+    width: 100%;
+    max-width: 614px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .solutions-grid {
+    grid-template-columns: 1fr; /* Switch to single column stack on mobile */
+    justify-items: center;
+    gap: 40px;
+  }
+  
+  .solution-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}

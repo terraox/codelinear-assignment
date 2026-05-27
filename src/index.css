@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg-color: #000D12;
+  --bg-color: #000D12; /* Reverted to the exact Figma background color #000D12 */
   --text-primary: #FFFFFF;
   --text-secondary: #5B6F84;
   --primary-blue-start: #0088FF;
