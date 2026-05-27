@@ -1,0 +1,147 @@
+.efficient-banking-section {
+  display: flex;
+  justify-content: center;
+  padding: 100px 3% 100px 3%; /* Consistent vertical section spacing */
+  background-color: #000D12; /* Matches previous section to create seamless flow */
+  position: relative;
+  overflow: hidden;
+}
+
+.efficient-banking-container {
+  display: flex;
+  width: 100%;
+  max-width: 1600px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  gap: 80px;
+}
+
+/* Left Column: Visual Mockup */
+.efficient-banking-visual {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 780px;
+}
+
+.dashboard-image-wrapper-efficient {
+  width: 100%;
+  max-width: 720px;
+  overflow: hidden;
+}
+
+.dashboard-image-efficient {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Right Column: Content Frame */
+.efficient-banking-content {
+  max-width: 900px; /* Expanded content box to fit the 2-line title and checklist columns comfortably */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.efficient-banking-title {
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem); /* Slightly tighter text size for standard heading layout */
+  max-width: none; /* No width limit, letting the <br /> tag control the 2-line wrap exactly */
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 48px; /* Vertical gap between title and "What you will get" */
+}
+
+.efficient-banking-subtitle {
+  font-size: clamp(16px, 1.2vw, 18px);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 32px; /* Gap below "What you will get" */
+}
+
+/* Features checklist columns layout */
+.features-columns {
+  display: flex;
+  align-items: flex-start; /* Both columns start from the top */
+  gap: 60px; /* 60px horizontal column gap */
+  width: 100%;
+}
+
+.features-column {
+  display: flex;
+  flex-direction: column;
+  gap: 28px; /* Uniform 28px vertical gap between list items */
+  flex: 1;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px; /* Gap between checkmark icon and text */
+}
+
+.feature-checkmark {
+  flex-shrink: 0;
+  margin-top: 2px; /* Aligns circle checkmark with first line of list item text */
+}
+
+.feature-text {
+  font-size: 16px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 400;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+  .efficient-banking-container {
+    gap: 40px;
+  }
+  
+  .features-columns {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .efficient-banking-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+  }
+
+  .efficient-banking-content {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .efficient-banking-visual {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .features-columns {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-columns {
+    flex-direction: column; /* Stack columns on tablets/mobiles */
+    gap: 28px;
+  }
+
+
+}
+
+@media (max-width: 600px) {
+  .efficient-banking-title {
+    font-size: 1.8rem;
+  }
+}
