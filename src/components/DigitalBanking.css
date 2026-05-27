@@ -1,8 +1,40 @@
 .digital-banking-section {
   position: relative;
-  background-color: #F4F7F9; /* High-fidelity light background as shown in reference */
+  background-color: #E9F4F9; /* High-fidelity light background as shown in reference */
   padding: 0 0 140px 0;
   overflow: hidden;
+}
+
+/* ── Decorative Vector Arc (left side) ── */
+.digital-vector-bg {
+  position: absolute;
+  left: -140px;
+  top: 30%;
+  width: 600px;
+  height: auto;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+
+  /* Mask gradient to fade the bottom of the vector background smoothly */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* ── Decorative '7' Image (right side) ── */
+.digital-bg-7 {
+  position: absolute;
+  right: 50px;
+  bottom: 0;
+  width: 400px;
+  height: auto;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+
+  /* Mask gradient to fade the bottom of the vector background smoothly */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
 }
 
 /* ── Scrolling Marquee Ticker ── */
@@ -78,29 +110,38 @@
 /* ── N7 Background Watermark ── */
 .digital-bg-watermark {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: clamp(380px, 35vw, 550px);
+  top: -5%;
+  font-size: clamp(380px, 34vw, 560px);
   font-weight: 700;
+  line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(0, 136, 255, 0.06); /* Thin light-blue stroke */
+  -webkit-text-stroke: 1.5px rgba(0, 136, 255, 0.15);
   font-family: var(--font-sans);
   pointer-events: none;
   z-index: 1;
   user-select: none;
   white-space: nowrap;
+  display: inline-block;
+
+  /* Mask gradient to fade the bottom half of the letters */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 90%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 90%);
 }
 
-.digital-bg-watermark span {
-  display: inline-block;
+/* "N" — sits in column 1 behind the header text */
+.digital-bg-watermark-n {
+  left: 15%;
   transform: scaleX(1.4);
-  transform-origin: center;
+  transform-origin: left center;
 }
+
+/* "7" — centered in column 2 behind the phone-1 image */
+.digital-bg-watermark-7 {
+  left: 47%;
+  transform: scaleX(1.4) translateX(-10%);
+  transform-origin: left center;
+}
+
 
 /* ── Alternating 3-Column Grid ── */
 .digital-banking-grid {
@@ -141,8 +182,9 @@
 
 .digital-main-actions {
   display: flex;
-  align-items: center;
-  gap: 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
   margin-top: 8px;
 }
 
@@ -173,6 +215,8 @@
   color: #0088FF;
   letter-spacing: 0.8px;
   text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .learn-more-arrow {

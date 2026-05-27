@@ -16,6 +16,22 @@ const TickerItem = () => (
 const DigitalBanking = () => {
   return (
     <section className="digital-banking-section">
+      {/* Decorative arc rings on the left side */}
+      <img
+        src="/Vector@2x.png"
+        alt=""
+        className="digital-vector-bg"
+        aria-hidden="true"
+      />
+
+      {/* Decorative '7' image on the right side */}
+      <img
+        src="/7.png"
+        alt=""
+        className="digital-bg-7"
+        aria-hidden="true"
+      />
+
       {/* Infinite Scrolling Ticker Banner at the top boundary */}
       <div className="ticker-container" aria-hidden="true">
         <div className="ticker-content">
@@ -28,10 +44,8 @@ const DigitalBanking = () => {
 
       <div className="digital-banking-container">
         {/* Giant background watermark "N7" outline */}
-        <div className="digital-bg-watermark" aria-hidden="true">
-          <span>N</span>
-          <span>7</span>
-        </div>
+        <span className="digital-bg-watermark digital-bg-watermark-n" aria-hidden="true">N</span>
+        <span className="digital-bg-watermark digital-bg-watermark-7" aria-hidden="true">7</span>
 
         {/* The 3x3 Alternating Grid */}
         <div className="digital-banking-grid">

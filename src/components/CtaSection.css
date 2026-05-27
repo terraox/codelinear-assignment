@@ -1,18 +1,18 @@
 .cta-section {
   display: flex;
-  justify-content: flex-end; /* Align the container to the right edge */
-  padding: 0 0 100px 0; /* No right padding so card can touch the edge; left padding handled via container margin */
-  background-color: #000D12;
+  justify-content: center;
+  padding: 0 3% 100px 3%; /* Same horizontal margins, breathing room at the bottom */
+  background-color: #E9F4F9; /* Area around the dark card is #E9F4F9 */
   width: 100%;
 }
 
 .cta-outer-container {
   width: 100%;
-  /* margin-left aligns the left edge of the card with the rest of the centered 1600px page content */
-  margin-left: max(3%, calc(50% - 800px));
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
-/* The rounded card */
+/* The rounded card - centered block */
 .cta-card {
   position: relative;
   width: 100%;
@@ -20,53 +20,10 @@
   align-items: center;
   justify-content: space-between;
   background-color: #021922;
-  border-radius: 24px 0 0 24px;
-  padding: 64px 185px 64px 120px;
+  border-radius: 24px; /* Fully rounded on all sides */
+  padding: 64px 120px;
   overflow: hidden;
   gap: 60px;
-}
-
-/* ── CB7 Watermark ── */
-.cta-watermark {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 14%;
-  width: 86%;
-  max-width: 1160px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: clamp(280px, 26vw, 360px);
-  font-weight: 700;
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(0, 136, 255, 0.12);
-  font-family: var(--font-sans);
-  pointer-events: none;
-  line-height: 0.8;
-  user-select: none;
-  white-space: nowrap;
-  padding: 0 0;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 90%);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 90%);
-}
-
-.cta-watermark span {
-  display: inline-block;
-  flex: 1;
-  text-align: center;
-  transform: scaleX(1.45); /* Slightly wider scaleX (1.45) */
-  transform-origin: center;
-}
-
-.cta-watermark span:first-child {
-  text-align: left;
-  transform-origin: left;
-}
-
-.cta-watermark span:last-child {
-  text-align: right;
-  transform-origin: right;
 }
 
 /* ── Left: Text Content ── */
@@ -152,40 +109,16 @@
     gap: 40px;
   }
 
-
-
   .cta-content {
     max-width: 100%;
     align-items: center;
-  }
-
-  .cta-watermark {
-    left: 40px;
-    right: 40px;
-    width: auto;
-    max-width: none;
-    justify-content: center;
-    gap: 0;
-    font-size: clamp(160px, 20vw, 240px); /* Slightly smaller to fit mobile/tablet card height */
-    line-height: 1;
-    top: 0;
-    bottom: 0;
-    transform: none;
   }
 }
 
 @media (max-width: 600px) {
   .cta-card {
     padding: 48px 28px;
-    border-radius: 16px 0 0 16px; /* Keep right side flat on mobile */
-  }
-
-  .cta-watermark {
-    left: 28px;
-    right: 28px;
-    width: auto;
-    max-width: none;
-    font-size: clamp(110px, 24vw, 160px); /* Fits inside mobile card height */
+    border-radius: 16px; /* Centered block is fully rounded on mobile too */
   }
 
   .cta-actions {

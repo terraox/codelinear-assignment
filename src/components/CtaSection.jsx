@@ -5,12 +5,7 @@ const CtaSection = () => {
     <section className="cta-section">
       <div className="cta-outer-container">
         <div className="cta-card">
-          {/* Background Watermark Text "CB7" spanning the card */}
-          <div className="cta-watermark" aria-hidden="true">
-            <span>C</span>
-            <span>B</span>
-            <span>7</span>
-          </div>
+
 
           {/* Left: Text Content */}
           <div className="cta-content">
