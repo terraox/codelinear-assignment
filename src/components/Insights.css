@@ -1,7 +1,7 @@
 .insights-section {
   position: relative;
   background-color: #000D12; /* Rich dark navy background matching Solutions and CloudBanking */
-  padding: 120px 3% 140px 3%;
+  padding: 120px 3% 70px 3%;
   overflow: hidden;
   width: 100%;
 }
@@ -83,7 +83,7 @@
 
 /* ── Card Base ── */
 .article-card {
-  background-color: #021922; /* Matches the CTA dark card color exactly */
+  background-color: #01141B; /* Matches the Case Studies card color */
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.12); /* Darker, more visible card border */
   overflow: hidden;

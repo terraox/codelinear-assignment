@@ -7,6 +7,8 @@ import EfficientBanking from './components/EfficientBanking';
 import DigitalBanking from './components/DigitalBanking';
 import Insights from './components/Insights';
 import CtaSection from './components/CtaSection';
+import CaseStudies from './components/CaseStudies';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,9 +20,11 @@ function App() {
         <CloudBanking />
         <EfficientBanking />
         <DigitalBanking />
-        <CtaSection />
         <Insights />
+        <CaseStudies />
+        <CtaSection />
       </main>
+      <Footer />
     </div>
   );
 }
