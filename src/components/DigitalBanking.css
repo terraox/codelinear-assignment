@@ -410,11 +410,11 @@
     grid-row: 3;
   }
 
-  .digital-banking-grid .feature-text-block:nth-child(5) {
+  .digital-banking-grid .phone-wrapper:nth-child(6) {
     grid-row: 4;
   }
 
-  .digital-banking-grid .phone-wrapper:nth-child(6) {
+  .digital-banking-grid .feature-text-block:nth-child(5) {
     grid-row: 5;
   }
 
