@@ -1,16 +1,32 @@
-# React + Vite
+# N7 Digital Banking Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is assignment submission by Aaditya Basisth.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Project Structure & Components
 
-## React Compiler
+We've adopted a highly modular architecture for this project. Instead of building monolithic pages, we've broken down the interface into focused, reusable pieces. Each section of the page is a component.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Here are the core components that make up the page (located in `src/components/`):
+- **Header & Footer:** The navigation and bottom links.
+- **Hero:** The main introductory section.
+- **Solutions, CloudBanking, EfficientBanking, DigitalBanking:** Sections detailing our core offerings.
+- **Insights & CaseStudies:** Areas showcasing our knowledge and past successes.
+- **CtaSection:** The final call-to-action block.
 
-## Expanding the ESLint configuration
+By building parts of the page as individual components, the codebase is much easier to maintain, scale, and understand.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Smooth Scrolling & Animations
+
+To make the user experience feel premium and fluid, we've integrated two awesome libraries:
+- **[Lenis Scroll](https://lenis.studiofreight.com/):** This handles the smooth scrolling experience, replacing the clunky default browser scroll with something buttery smooth. 
+- **[Framer Motion](https://www.framer.com/motion/):** We use this to bring our components to life with dynamic, interactive animations.
+
+##  Design & Aesthetics
+
+All the text, spacing, and color details you see are extracted directly from our **Figma** designs. We wanted to make sure the final product looks exactly as the figma design provided.
+The website is responsive across various devices.
+
+---
+
+*To run the project locally, just run `npm install` followed by `npm run dev`.*
