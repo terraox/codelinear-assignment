@@ -215,6 +215,26 @@ const DigitalBanking = () => {
           </div>
 
         </div>
+
+        {/* Inner CTA Block (The 'Phone' section CTA) */}
+        <div className="digital-inner-cta">
+          <img src="/N7-img.png" alt="" className="inner-cta-watermark-img" aria-hidden="true" />
+          
+          <div className="inner-cta-content">
+            <h2 className="inner-cta-title">
+              Take the full advantage of<br />going paper-less now.
+            </h2>
+            <p className="inner-cta-description">
+              N7 helps your financial institution improve the client experience,<br />
+              automate and optimize procedures, simplify banking operations
+            </p>
+          </div>
+          
+          <div className="inner-cta-actions">
+            <button className="btn-contact-us-inner">CONTACT US</button>
+            <button className="btn-request-demo-inner">REQUEST DEMO</button>
+          </div>
+        </div>
       </div>
     </section>
   );

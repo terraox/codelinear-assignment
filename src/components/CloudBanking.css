@@ -49,12 +49,19 @@
 
 .cloud-banking-container {
   display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 1600px;
-  justify-content: space-between;
-  align-items: center;
   position: relative;
   z-index: 2;
+  gap: 80px;
+}
+
+.cloud-banking-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
   gap: 80px;
 }
 
@@ -169,16 +176,15 @@
 }
 
 
-
 /* Responsiveness */
 @media (max-width: 1200px) {
-  .cloud-banking-container {
+  .cloud-banking-row {
     gap: 40px;
   }
 }
 
 @media (max-width: 991px) {
-  .cloud-banking-container {
+  .cloud-banking-row {
     flex-direction: column;
     text-align: center;
     gap: 60px;

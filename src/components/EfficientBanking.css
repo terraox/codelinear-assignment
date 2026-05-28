@@ -9,12 +9,19 @@
 
 .efficient-banking-container {
   display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 1600px;
-  justify-content: space-between;
-  align-items: center;
   position: relative;
   z-index: 2;
+  gap: 80px;
+}
+
+.efficient-banking-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
   gap: 80px;
 }
 
@@ -98,9 +105,109 @@
   font-weight: 400;
 }
 
+/* Efficient Banking Inner CTA Block */
+.efficient-inner-cta {
+  position: relative;
+  margin-top: 60px;
+  background-color: #021922;
+  border-radius: 24px;
+  padding: 100px 80px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Inner Watermark (Image mask) */
+.efficient-cta-watermark-img {
+  position: absolute;
+  top: 0;
+  right: 8%;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.efficient-cta-content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.efficient-cta-title {
+  font-size: clamp(2rem, 2.5vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: #FFFFFF;
+}
+
+.efficient-cta-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.efficient-cta-actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.btn-contact-us-efficient {
+  padding: 14px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-contact-us-efficient:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-request-demo-efficient-cta {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #0197F2 0%, #0144D2 100%);
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-request-demo-efficient-cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
 /* Responsiveness */
 @media (max-width: 1200px) {
-  .efficient-banking-container {
+  .efficient-banking-row {
     gap: 40px;
   }
   
@@ -110,7 +217,7 @@
 }
 
 @media (max-width: 991px) {
-  .efficient-banking-container {
+  .efficient-banking-row {
     flex-direction: column;
     text-align: center;
     gap: 60px;
@@ -129,6 +236,12 @@
   .features-columns {
     text-align: left;
   }
+  
+  .efficient-inner-cta {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 40px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -136,12 +249,21 @@
     flex-direction: column; /* Stack columns on tablets/mobiles */
     gap: 28px;
   }
-
-
 }
 
 @media (max-width: 600px) {
   .efficient-banking-title {
     font-size: 1.8rem;
+  }
+  
+  .efficient-inner-cta {
+    padding: 40px 24px;
+  }
+  .efficient-cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-contact-us-efficient, .btn-request-demo-efficient-cta {
+    width: 100%;
   }
 }
