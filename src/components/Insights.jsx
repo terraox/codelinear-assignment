@@ -31,17 +31,22 @@ const Insights = () => {
             </div>
             
             <div className="featured-card-content">
-              <span className="article-category">GETTING STARTED</span>
-              <h3 className="article-title">
-                How to transition from a<br />
-                traditional to a digital<br />
-                bank
-              </h3>
-              <div className="article-metadata">
-                <span className="article-author">David Grohl</span>
-                <span className="article-date">17/08/24</span>
+              <div className="featured-card-body">
+                <span className="article-category">GETTING STARTED</span>
+                <h3 className="article-title">
+                  How to transition from a<br />
+                  traditional to a digital<br />
+                  bank
+                </h3>
+                <div className="article-metadata">
+                  <span className="article-author">David Grohl</span>
+                  <span className="article-date">17/08/24</span>
+                </div>
               </div>
-              <button className="btn-read-more">READ MORE</button>
+              <div className="card-footer-lines">
+                <div className="card-line"></div>
+                <div className="card-line"></div>
+              </div>
             </div>
           </div>
 
@@ -50,32 +55,42 @@ const Insights = () => {
             
             {/* Bottom Card 1 */}
             <div className="article-card standard-card">
-              <span className="article-category">GETTING STARTED</span>
-              <h3 className="article-title">
-                How to transition from a<br />
-                traditional to a<br />
-                digital bank
-              </h3>
-              <div className="article-metadata">
-                <span className="article-author">David Grohl</span>
-                <span className="article-date">17/08/24</span>
+              <div className="standard-card-body">
+                <span className="article-category">GETTING STARTED</span>
+                <h3 className="article-title">
+                  How to transition<br />
+                  from a traditional to a<br />
+                  digital bank
+                </h3>
+                <div className="article-metadata">
+                  <span className="article-author">David Grohl</span>
+                  <span className="article-date">17/08/24</span>
+                </div>
               </div>
-              <button className="btn-read-more">READ MORE</button>
+              <div className="card-footer-lines">
+                <div className="card-line"></div>
+                <div className="card-line"></div>
+              </div>
             </div>
 
             {/* Bottom Card 2 */}
             <div className="article-card standard-card">
-              <span className="article-category">GETTING STARTED</span>
-              <h3 className="article-title">
-                How to transition from a<br />
-                traditional to a<br />
-                digital bank
-              </h3>
-              <div className="article-metadata">
-                <span className="article-author">David Grohl</span>
-                <span className="article-date">17/08/24</span>
+              <div className="standard-card-body">
+                <span className="article-category">GETTING STARTED</span>
+                <h3 className="article-title">
+                  How to transition<br />
+                  from a traditional to a<br />
+                  digital bank
+                </h3>
+                <div className="article-metadata">
+                  <span className="article-author">David Grohl</span>
+                  <span className="article-date">17/08/24</span>
+                </div>
               </div>
-              <button className="btn-read-more">READ MORE</button>
+              <div className="card-footer-lines">
+                <div className="card-line"></div>
+                <div className="card-line"></div>
+              </div>
             </div>
 
           </div>

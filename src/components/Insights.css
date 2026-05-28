@@ -31,7 +31,7 @@
 
 /* ── Left Column: Heading Block ── */
 .insights-left {
-  flex: 0 0 35%;
+  flex: 0 0 auto;
   max-width: 480px;
   display: flex;
   flex-direction: column;
@@ -45,13 +45,17 @@
   line-height: 1.15;
   color: var(--text-primary);
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .btn-insights-tag {
-  padding: 14px 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 38px;
   border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -59,6 +63,7 @@
   background: transparent;
   transition: all 0.2s ease;
   cursor: pointer;
+  text-align: center;
 }
 
 .btn-insights-tag:hover {
@@ -72,13 +77,15 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  container-type: inline-size;
+  max-width: 760px; /* Limits the size of the cards on desktop */
 }
 
 /* ── Card Base ── */
 .article-card {
   background-color: #021922; /* Matches the CTA dark card color exactly */
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12); /* Darker, more visible card border */
   overflow: hidden;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
@@ -93,16 +100,22 @@
 .featured-card {
   display: flex;
   width: 100%;
+  height: calc((100cqw - 32px) / 2);
+  --card-padding: 48px;
 }
 
 .featured-card-visual {
-  width: 38%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  width: auto;
+  flex-shrink: 0;
   background-color: #001320; /* Darker navy box for the tile pattern */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   padding: 40px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08); /* Divider line between visual and content */
 }
 
 .featured-card-img {
@@ -114,10 +127,20 @@
 
 .featured-card-content {
   flex: 1;
-  padding: 48px;
+  padding: 0; /* Content padding moved to body wrapper for edge-to-edge button layout */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
+}
+
+.featured-card-body {
+  padding: var(--card-padding) var(--card-padding) 20px var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centered horizontally */
+  justify-content: center; /* Centered vertically */
+  text-align: center; /* Centers multi-line text */
+  flex: 1;
 }
 
 /* ── Article Content Details ── */
@@ -137,6 +160,7 @@
   line-height: 1.35;
   color: var(--text-primary);
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .article-metadata {
@@ -145,7 +169,7 @@
   font-size: 13px;
   color: rgba(255, 255, 255, 0.45);
   font-weight: 400;
-  margin-bottom: 32px;
+  margin-bottom: 0;
 }
 
 .article-author {
@@ -160,25 +184,21 @@
   color: rgba(255, 255, 255, 0.25);
 }
 
-/* ── Action Buttons ── */
-.btn-read-more {
-  padding: 12px 28px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 8px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
-  background: transparent;
-  transition: all 0.2s ease;
-  cursor: pointer;
+/* ── Card Footer Lines (two parallel decorative lines at card bottom) ── */
+.card-footer-lines {
+  width: 100%;
+  margin-top: auto; /* Pushes lines to bottom of card */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* Wider spacing between the two lines */
+  padding-bottom: 24px;
 }
 
-.btn-read-more:hover {
-  border-color: #0088FF;
-  color: #0088FF;
-  background-color: rgba(0, 136, 255, 0.04);
+.card-line {
+  width: 100%;
+  height: 1px;
+  background-color: #495A60;
 }
 
 /* ── Bottom Grid (Two columns) ── */
@@ -189,10 +209,22 @@
 }
 
 .standard-card {
-  padding: 48px;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
+  aspect-ratio: 1 / 1;
+  --card-padding: 36px;
+}
+
+.standard-card-body {
+  padding: var(--card-padding) var(--card-padding) 20px var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centered horizontally */
+  justify-content: center; /* Centered vertically */
+  text-align: center; /* Centers multi-line text */
+  flex: 1;
 }
 
 .standard-card .article-title {
@@ -201,7 +233,7 @@
   line-height: 1.35;
   color: var(--text-primary);
   margin-bottom: 16px;
-  flex: 1; /* Pushes metadata & button down to align bottom */
+  text-align: center;
 }
 
 /* ── Bottom Link Row ── */
@@ -247,6 +279,10 @@
   .insights-bottom-grid {
     gap: 24px;
   }
+
+  .featured-card {
+    height: calc((100cqw - 24px) / 2);
+  }
 }
 
 @media (max-width: 991px) {
@@ -262,22 +298,36 @@
     text-align: center;
   }
 
+  .insights-title {
+    white-space: normal;
+  }
+
   .insights-right {
     width: 100%;
   }
 
   .featured-card {
     flex-direction: column;
+    height: auto;
+    --card-padding: 40px;
   }
 
   .featured-card-visual {
     width: 100%;
+    height: auto;
+    aspect-ratio: auto;
     padding: 60px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Swap right border to bottom on stack */
   }
 
   .featured-card-content {
     width: 100%;
-    padding: 40px;
+    padding: 0;
+  }
+
+  .standard-card {
+    aspect-ratio: auto;
   }
 }
 
@@ -288,7 +338,8 @@
   }
   
   .standard-card {
-    padding: 36px;
+    padding: 0;
+    --card-padding: 36px;
   }
 
   .insights-link-row {
@@ -301,15 +352,20 @@
     padding: 80px 3% 100px 3%;
   }
 
+  .featured-card {
+    --card-padding: 30px;
+  }
+
   .featured-card-visual {
     padding: 40px;
   }
 
   .featured-card-content {
-    padding: 30px;
+    padding: 0;
   }
 
   .standard-card {
-    padding: 30px;
+    padding: 0;
+    --card-padding: 30px;
   }
 }
