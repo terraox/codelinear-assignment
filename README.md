@@ -1,7 +1,6 @@
 # N7 Digital Banking Platform
 
 This is assignment submission by Aaditya Basisth.
-aft
 
 ## Project Structure & Components
 
