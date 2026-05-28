@@ -1,3 +1,4 @@
+import { ReactLenis } from 'lenis/react';
 import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -12,7 +13,8 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="app-container">
+    <ReactLenis root>
+      <div className="app-container">
       <Header />
       <main>
         <Hero />
@@ -25,7 +27,8 @@ function App() {
         <CtaSection />
       </main>
       <Footer />
-    </div>
+      </div>
+    </ReactLenis>
   );
 }
 

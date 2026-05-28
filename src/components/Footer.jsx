@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import './Footer.css';
 
 const Footer = () => {
@@ -28,7 +29,13 @@ const Footer = () => {
 
   return (
     <footer className="footer-section">
-      <div className="footer-container">
+      <motion.div 
+        className="footer-container"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         
         {/* Left Column: Brand Logo */}
         <div className="footer-brand">
@@ -131,7 +138,7 @@ const Footer = () => {
 
         </div>
 
-      </div>
+      </motion.div>
 
       {/* Bottom Copyright Area */}
       <div className="footer-copyright-container">

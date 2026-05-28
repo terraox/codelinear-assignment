@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import './CaseStudies.css';
 
 const ZoomerrLogo = () => (
@@ -77,10 +78,24 @@ const CaseStudies = () => {
   return (
     <section className="case-studies-section" id="resources">
       <div className="case-studies-container">
-        <h2 className="case-studies-header-title">Our Case Studies</h2>
+        <motion.h2 
+          className="case-studies-header-title"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          Our Case Studies
+        </motion.h2>
 
         {/* Horizontal Case Study Card */}
-        <div className="case-study-card">
+        <motion.div 
+          className="case-study-card"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+        >
           {/* Left Side: Visual Tile Pattern (always shows /tile.png) */}
           <div className="case-study-visual">
             <img 
@@ -107,10 +122,16 @@ const CaseStudies = () => {
               <div className="card-line"></div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Slider Controls Row */}
-        <div className="slider-controls-row">
+        <motion.div 
+          className="slider-controls-row"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+        >
           <div className="slider-controls-center">
                        {/* Left Chevron Button */}
             <button 
@@ -151,7 +172,7 @@ const CaseStudies = () => {
           <a href="#case-studies" className="btn-view-all-case-studies">
             VIEW ALL <span className="arrow">→</span>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

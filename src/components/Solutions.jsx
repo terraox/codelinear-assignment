@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import './Solutions.css';
 
 const Solutions = () => {
@@ -43,18 +44,31 @@ const Solutions = () => {
 
       <div className="solutions-container">
         {/* Left Column: Sticky Title & Button */}
-        <div className="solutions-sidebar">
+        <motion.div 
+          className="solutions-sidebar"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <h2 className="solutions-title">
             All of our solutions are<br />
             tailor-made to your needs
           </h2>
           <button className="btn-request-demo-solutions">REQUEST DEMO</button>
-        </div>
+        </motion.div>
 
         {/* Right Column: Solutions Grid */}
         <div className="solutions-grid">
-          {solutionsList.map((sol) => (
-            <div key={sol.id} className="solution-card">
+          {solutionsList.map((sol, index) => (
+            <motion.div 
+              key={sol.id} 
+              className="solution-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+            >
               <div className="solution-card-header">
                 <div className="solution-icon-wrapper">
                   <img 
@@ -73,7 +87,7 @@ const Solutions = () => {
                   <path d="M1 6H11M11 6L6 1M11 6L6 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

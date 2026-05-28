@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import './Hero.css';
 
 const Hero = () => {
@@ -6,7 +7,12 @@ const Hero = () => {
       <div className="hero-container">
         
         {/* Left Column: Text Content & Actions */}
-        <div className="hero-content">
+        <motion.div 
+          className="hero-content"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="hero-text-frame">
             <h1 className="hero-title">
               The new foundation<br />of modern banking
@@ -32,10 +38,15 @@ const Hero = () => {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
         
         {/* Right Column: Floating Visual Collage */}
-        <div className="hero-visual">
+        <motion.div 
+          className="hero-visual"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        >
           <div className="glow-background"></div>
           
           <div className="collage-wrapper">
@@ -60,7 +71,7 @@ const Hero = () => {
               className="overlay-card overlay-right" 
             />
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

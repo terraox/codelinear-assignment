@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import './Insights.css';
 
 const Insights = () => {
@@ -8,20 +9,32 @@ const Insights = () => {
 
       <div className="insights-container">
         {/* Left Column: Heading and Tag Button */}
-        <div className="insights-left">
+        <motion.div 
+          className="insights-left"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <h2 className="insights-title">
             Get yourself up-to-speed on<br />
             all the things happening in<br />
             fintech
           </h2>
           <button className="btn-insights-tag">INSIGHTS</button>
-        </div>
+        </motion.div>
 
         {/* Right Column: Article Grid */}
         <div className="insights-right">
           
           {/* Top Featured Card (Wide layout) */}
-          <div className="article-card featured-card">
+          <motion.div 
+            className="article-card featured-card"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <div className="featured-card-visual">
               <img 
                 src="/tile.png" 
@@ -48,13 +61,19 @@ const Insights = () => {
                 <div className="card-line"></div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Bottom Grid containing two standard cards side-by-side */}
           <div className="insights-bottom-grid">
             
             {/* Bottom Card 1 */}
-            <div className="article-card standard-card">
+            <motion.div 
+              className="article-card standard-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            >
               <div className="standard-card-body">
                 <span className="article-category">GETTING STARTED</span>
                 <h3 className="article-title">
@@ -71,10 +90,16 @@ const Insights = () => {
                 <div className="card-line"></div>
                 <div className="card-line"></div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Bottom Card 2 */}
-            <div className="article-card standard-card">
+            <motion.div 
+              className="article-card standard-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            >
               <div className="standard-card-body">
                 <span className="article-category">GETTING STARTED</span>
                 <h3 className="article-title">
@@ -91,7 +116,7 @@ const Insights = () => {
                 <div className="card-line"></div>
                 <div className="card-line"></div>
               </div>
-            </div>
+            </motion.div>
 
           </div>
 

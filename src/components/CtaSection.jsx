@@ -1,9 +1,16 @@
+import { motion } from 'framer-motion';
 import './CtaSection.css';
 
 const CtaSection = () => {
   return (
     <section className="cta-section">
-      <div className="cta-container">
+      <motion.div 
+        className="cta-container"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         {/* Left: Text Content */}
         <div className="cta-content">
           <h2 className="cta-title">
@@ -20,7 +27,7 @@ const CtaSection = () => {
           <button className="btn-contact-us">CONTACT US</button>
           <button className="btn-request-demo-cta">REQUEST DEMO</button>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
